@@ -1,3 +1,0 @@
-Class Node
-
-end
