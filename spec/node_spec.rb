@@ -6,5 +6,14 @@ RSpec.describe Node do
 
     expect(node).to be_instance_of(Node)
   end
-  require 'pry'; binding.pry
+  it 'node data ' do
+    node = Node.new("plop")
+
+    expect(node.data).to eq("plop")
+  end
+  it 'next node indicator' do
+    node = Node.new("plop")
+
+    expect(node.next_node).to eq(nil)
+  end
 end
