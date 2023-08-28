@@ -10,7 +10,7 @@ RSpec.describe LinkedList do
     end
   end
 
-  describe 'head starts nil' do
+  describe 'Head starts nil' do
     it 'head is nil with empty list' do
       list = LinkedList.new
 
@@ -18,7 +18,7 @@ RSpec.describe LinkedList do
     end
   end
 
-  describe 'append' do
+  describe 'Append' do
     it 'adds a new piece of data to the list' do
       list = LinkedList.new
       list.append("doop")
@@ -28,7 +28,7 @@ RSpec.describe LinkedList do
       expect(list.head).to be_instance_of(Node)
     end
   end
-  describe 'count' do
+  describe 'Count' do
     it 'counts nodes in list' do
       list = LinkedList.new
       list.append("doop")
@@ -38,7 +38,7 @@ RSpec.describe LinkedList do
     end
   end
 
-  describe 'to string' do
+  describe 'To_String' do
     it 'shows list of node data in a string' do
       list = LinkedList.new
       list.append("doop")
@@ -48,7 +48,7 @@ RSpec.describe LinkedList do
     end
   end
 
-  describe 'methods work with multiple nodes' do
+  describe 'Methods work with multiple nodes' do
     it 'checks methods work with multiple' do
       list = LinkedList.new
 
@@ -64,7 +64,7 @@ RSpec.describe LinkedList do
     end
   end
 
-  describe 'multiple nodes' do
+  describe 'Multiple nodes' do
     it 'adds multiple nodes' do
     list = LinkedList.new
     list.append("plop")
@@ -75,7 +75,7 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("plop suu") 
     end
   end
-  describe 'prepend' do
+  describe 'Prepend' do
     it 'adds node to front of list' do
     list = LinkedList.new
     list.append("plop")
@@ -86,14 +86,29 @@ RSpec.describe LinkedList do
     expect(list.count).to eq(3)
     end
   end
-  describe 'incert' do
-    it 'incert node where i want' do
+  describe 'Insert' do
+    it 'insert one or more elements at a given position in the list' do
     list = LinkedList.new
     list.append("plop")
     list.append("suu")
     list.prepend("dop")
+    list.insert(1, "woo")
 
-    expect(list.insert(1, "woo")).to eq("dop woo plop suu")
+    expect(list.to_string).to eq("dop woo plop suu")
+    end
+  end
+  describe 'Find' do
+    it ' takes two parameters, the first indicates the first position to return 
+    and the second parameter specifies how many elements to return' do
+    list = LinkedList.new
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    list.prepend("deep")
+    list.insert(1, "woo")
+
+    expect(list.to_string).to eq("deep woo shi shu blop")
+    expect(list.find(2, 1)).to eq("shi")
     end
   end
 end
