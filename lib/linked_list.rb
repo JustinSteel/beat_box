@@ -2,7 +2,6 @@ class LinkedList
     attr_reader :head
     def initialize
         @head = nil
-        # @current_node = current_node
         
     end
     def append(data)
