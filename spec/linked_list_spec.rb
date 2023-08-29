@@ -22,7 +22,7 @@ RSpec.describe LinkedList do
     it 'adds a new piece of data to the list' do
       list = LinkedList.new
       list.append("doop")
-      # require 'pry'; binding.pry
+      
       expect(list.head.data).to eq("doop")
       expect(list.head.next_node).to eq(nil)
       expect(list.head).to be_instance_of(Node)
@@ -34,7 +34,10 @@ RSpec.describe LinkedList do
       list.append("doop")
       
       
+      
       expect(list.count).to eq(1)
+      list.append("sloop")
+      expect(list.count).to eq(2)
     end
   end
 
@@ -45,6 +48,7 @@ RSpec.describe LinkedList do
       
       
       expect(list.to_string).to eq("doop")
+      list.append("doop")
     end
   end
 
@@ -95,6 +99,12 @@ RSpec.describe LinkedList do
     list.insert(1, "woo")
 
     expect(list.to_string).to eq("dop woo plop suu")
+    list.insert(3, "boo")
+    expect(list.to_string).to eq("dop woo plop boo suu")
+    list.insert(2, "foo")
+    expect(list.to_string).to eq("dop woo foo plop boo suu")
+    list.insert(20, "bo")
+    expect(list.insert(20, "bo")).to eq("You cant put a node in position 20 because there are only 6 nodes in this list")
     end
   end
   describe 'Find' do
@@ -109,6 +119,7 @@ RSpec.describe LinkedList do
 
     expect(list.to_string).to eq("deep woo shi shu blop")
     expect(list.find(2, 1)).to eq("shi")
+    expect(list.find(0, 1)).to eq("deep")
     expect(list.find(1, 3)).to eq("woo shi shu")
     end
   end
@@ -140,3 +151,20 @@ RSpec.describe LinkedList do
     end
   end
 end
+
+# git branch - shows current branch and local branches
+# git branch -r - remote branches
+# git branch -a - all branches
+# git checkout -b feature/name-of-branch - create new branch, switch to branch
+# git checkout name-of-branch - change branches
+# git fetch - gives list of all remote branches (query command)
+# git merge - combines remote branch to local branch
+# git pull - combines git fetch and git merge
+# git push origin feature/even-better-branch - push local changes to specified branch
+
+
+
+
+
+
+
