@@ -51,11 +51,11 @@ end
   describe 'Play' do
     it 'Play that funky music' do
     bb = BeatBox.new
-    bb.append("deep doo ditt")
-    bb.append("woo boo pow")
-    bb.append("cha boop moo")
-    bb.append("bop cap chow")
-    bb.append("foo hoo shu")
+    bb.append("deep doo ditt deep doo ditt")
+    bb.append("woo boo pow woo boo pow")
+    bb.append("cha boop moo cha boop moo")
+    bb.append("bop cap chow bop cap chow")
+    bb.append("foo hoo shu foo hoo shu")
 
     expect(bb.respond_to?(:play)).to be true
     bb.play
