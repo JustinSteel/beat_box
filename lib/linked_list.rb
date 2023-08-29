@@ -91,14 +91,14 @@ class LinkedList
     current_node = @head
     if @head.nil?
       "empty list"
-    else 
+    else
       until counter > position + length
       node_house += "#{current_node.data} " if counter > position
       current_node = current_node.next_node
       counter += 1
-      end  
+      end
+      node_house.strip
     end
-    node_house.strip
   end
 
   def includes?(string)
