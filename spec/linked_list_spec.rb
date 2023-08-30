@@ -141,7 +141,7 @@ RSpec.describe LinkedList do
     expect(list.includes?("dep")).to eq(false)
     end
   end
-  
+
   describe 'Pop' do
     it 'removes the last element from the list and returns it' do
     list = LinkedList.new

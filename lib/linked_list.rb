@@ -40,8 +40,8 @@ class LinkedList
       "This is empty"
     else 
       while current_node != nil
-      node_house += "#{current_node.data} "
-      current_node = current_node.next_node 
+        node_house += "#{current_node.data} "
+        current_node = current_node.next_node 
       end 
     end
     node_house.strip
@@ -69,21 +69,21 @@ class LinkedList
 
     elsif position <= count
       until position == counter
-      current_node = current_node.next_node
-      counter += 1
+        current_node = current_node.next_node
+        counter += 1
       end
       new_node.next_node = current_node
       counter = 0
       until (position -1) == counter
-      prev_node = prev_node.next_node
-      counter += 1
+        prev_node = prev_node.next_node
+        counter += 1
       end
       prev_node.next_node = new_node
 
     elsif position > count
     "You cant put a node in position #{position} because there are only #{count} nodes in this list"
     end
-    end
+  end
 
   def find(position, length)
     node_house = " "
@@ -93,9 +93,9 @@ class LinkedList
       "empty list"
     else
       until counter > position + length
-      node_house += "#{current_node.data} " if counter > position
-      current_node = current_node.next_node
-      counter += 1
+        node_house += "#{current_node.data} " if counter > position
+        current_node = current_node.next_node
+        counter += 1
       end
       node_house.strip
     end
@@ -121,10 +121,10 @@ class LinkedList
     @head = nil
     else
     current_node = @head
-    until current_node.next_node.next_node.nil?
-      current_node = current_node.next_node
-      
-    end
+      until current_node.next_node.next_node.nil?
+        current_node = current_node.next_node
+        
+      end
     return_data += current_node.next_node.data
     current_node.next_node = nil
     end
