@@ -28,6 +28,7 @@ RSpec.describe LinkedList do
       expect(list.head).to be_instance_of(Node)
     end
   end
+
   describe 'Count' do
     it 'counts nodes in list' do
       list = LinkedList.new
@@ -79,6 +80,7 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("plop suu") 
     end
   end
+
   describe 'Prepend' do
     it 'adds node to front of list' do
     list = LinkedList.new
@@ -90,6 +92,7 @@ RSpec.describe LinkedList do
     expect(list.count).to eq(3)
     end
   end
+
   describe 'Insert' do
     it 'insert one or more elements at a given position in the list' do
     list = LinkedList.new
@@ -107,6 +110,7 @@ RSpec.describe LinkedList do
     expect(list.insert(20, "bo")).to eq("You cant put a node in position 20 because there are only 6 nodes in this list")
     end
   end
+
   describe 'Find' do
     it ' takes two parameters, the first indicates the first position to return 
     and the second parameter specifies how many elements to return' do
@@ -123,6 +127,7 @@ RSpec.describe LinkedList do
     expect(list.find(1, 3)).to eq("woo shi shu")
     end
   end
+
   describe 'Include' do
     it 'gives back true or false whether the supplied value is in the list' do
     list = LinkedList.new
@@ -136,6 +141,7 @@ RSpec.describe LinkedList do
     expect(list.includes?("dep")).to eq(false)
     end
   end
+  
   describe 'Pop' do
     it 'removes the last element from the list and returns it' do
     list = LinkedList.new
